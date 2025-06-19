@@ -158,3 +158,4 @@ For questions, issues, or contributions:
 
 **Citadel Beta** - Transforming AI applications through sophisticated inference architecture and comprehensive knowledge management capabilities.
 
+# Citadel-Beta
