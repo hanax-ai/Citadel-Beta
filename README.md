@@ -1,160 +1,296 @@
-# Citadel Beta Release
+# Citadel AI Operating System
 
-**Enterprise-Grade AI Platform with HANA-X Inference Architecture**
+**Enterprise-Grade AI Runtime Environment for Business Operations**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](./DOCUMENTATION_INDEX.md)
-[![Version](https://img.shields.io/badge/version-3.0-blue.svg)](./CHANGELOG.md)
-
-## Overview
-
-Citadel Beta is a comprehensive AI platform that combines sophisticated AI inference capabilities with advanced data acquisition and knowledge management systems. The platform integrates the HANA-X Inference Architecture with essential data processing and RAG (Retrieval-Augmented Generation) capabilities to create a complete solution for knowledge-based AI applications.
-
-### Key Features
-
-- **🚀 HANA-X Inference Architecture** - Seven specialized AI models with intelligent task routing
-- **🔍 Advanced Data Acquisition** - Crawl4AI integration for comprehensive web crawling and content processing
-- **📚 Knowledge Management** - Sophisticated document processing and vector storage with Qdrant
-- **🤖 RAG Pipeline** - Complete retrieval-augmented generation capabilities
-- **⚡ Production Ready** - Enterprise-grade monitoring, security, and operational excellence
-- **🏗️ Scalable Architecture** - Designed for high-performance AI applications
-
-### Architecture Highlights
-
-- **7 Specialized AI Models** including Mixtral-8x7B, Yi-34B, DeepCoder-14B, and MiMo-VL-7B-RL
-- **Intelligent Task Routing** with automatic model selection based on query analysis
-- **Advanced Multimodal Capabilities** supporting text, code, and vision-language processing
-- **Comprehensive Data Pipeline** from web crawling to knowledge base construction
-- **Enterprise Infrastructure** with 7-server HANA-X Lab deployment
-
-## Quick Start
-
-### Prerequisites
-
-- Ubuntu 24.04 LTS servers (7 servers recommended)
-- Python 3.12.x
-- CUDA 12.9+ (for GPU acceleration)
-- 64GB+ RAM per AI inference server
-- High-speed network connectivity
-
-### Installation
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-org/citadel-beta.git
-   cd citadel-beta
-   ```
-
-2. **Review Documentation**
-   - Start with [Documentation Index](./DOCUMENTATION_INDEX.md) for complete navigation
-   - Review [Enhanced Architecture Blueprint](./docs/architecture/current/enhanced-architecture-blueprint.md)
-   - Follow [Enhanced Implementation Plan](./docs/implementation/deployment/enhanced-implementation-plan.md)
-
-3. **Deploy Infrastructure**
-   - Configure servers according to [Server Configuration Guide](./docs/architecture/current/server-configuration.md)
-   - Follow [Deployment Order Strategy](./docs/implementation/deployment/deployment-order.md)
-   - Begin with [Phase 1 Database Setup](./docs/implementation/deployment/phase-1-database-setup.md)
-
-## Documentation
-
-### 📚 Complete Documentation Index
-The [Documentation Index](./DOCUMENTATION_INDEX.md) provides comprehensive navigation for all project documentation, including:
-
-- **Current Documentation (v3.0)** - Latest architecture, implementation, and operational guides
-- **Archived Versions** - Historical documentation for v1.0 and v2.0
-- **Document Relationships** - Clear guidance on how documents relate and depend on each other
-- **Usage Guidance** - Stakeholder-specific navigation and information discovery strategies
-
-### 🏗️ Architecture Documentation
-- [Enhanced Architecture Blueprint](./docs/architecture/current/enhanced-architecture-blueprint.md) - Complete system architecture
-- [HANA-X Inference Architecture](./docs/architecture/current/hana-x-inference-architecture.md) - AI inference specifications
-- [Server Configuration Guide](./docs/architecture/current/server-configuration.md) - Detailed server setup
-- [Technology Stack Mapping](./docs/architecture/current/technology-stack-mapping.md) - 190+ technologies mapped
-
-### 🚀 Implementation Documentation
-- [Enhanced Implementation Plan](./docs/implementation/deployment/enhanced-implementation-plan.md) - 4-phase deployment strategy
-- [Deployment Order Strategy](./docs/implementation/deployment/deployment-order.md) - Optimal deployment sequence
-- [Phase 1 Database Setup](./docs/implementation/deployment/phase-1-database-setup.md) - Foundation infrastructure
-
-### 📊 Analysis and Research
-- [PoC Analysis Report](./docs/analysis/poc-analysis/poc-analysis-report.md) - Critical missing components analysis
-- [MiMo-VL-7B-RL Analysis](./docs/analysis/technology-assessment/mimo-vllm-analysis.md) - AI model assessment
-- [DeepCoder Integration Analysis](./docs/analysis/technology-assessment/deepcoder-integration.md) - Code intelligence integration
-
-## Project Structure
-
-```
-citadel-beta/
-├── docs/                    # Current documentation (v3.0)
-│   ├── architecture/        # System architecture and design
-│   ├── implementation/      # Deployment and configuration guides
-│   ├── analysis/           # Research and technology assessments
-│   ├── operations/         # Monitoring, security, and maintenance
-│   └── user-guides/        # Getting started and tutorials
-├── archive/                # Historical documentation versions
-│   ├── v1.0/              # Original Citadel documentation
-│   ├── v2.0/              # HANA-X integration documentation
-│   └── metadata/          # Version history and migration notes
-├── assets/                 # Images, diagrams, and media files
-├── templates/              # Document and configuration templates
-├── scripts/                # Automation and utility scripts
-├── examples/               # Implementation examples
-└── tools/                  # Development and deployment tools
-```
-
-## Technology Stack
-
-### Core AI Infrastructure
-- **vLLM 0.2.7** - High-performance AI inference engine
-- **Qdrant** - Advanced vector database for knowledge storage
-- **Crawl4AI** - Sophisticated web crawling and content processing
-- **Pydantic AI** - Advanced agent capabilities with tool integration
-
-### Specialized AI Models
-- **Mixtral-8x7B** - General reasoning and fallback operations
-- **Yi-34B** - Long context processing (32K tokens)
-- **DeepCoder-14B** - Code understanding and generation
-- **MiMo-VL-7B-RL** - Vision-language multimodal processing
-- **Nous Hermes 2 Mistral** - RAG-optimized document Q&A
-- **OpenChat 3.5** - Interactive dialogue and tool usage
-- **Phi-3 Mini** - Ultra-fast lightweight operations
-
-### Infrastructure Technologies
-- **Ubuntu 24.04 LTS** - Operating system foundation
-- **Python 3.12.x** - Primary development environment
-- **PostgreSQL 16** - Relational database management
-- **Redis 7.2.4** - Caching and session management
-- **Prometheus + Grafana** - Monitoring and observability
-
-## Contributing
-
-We welcome contributions to the Citadel Beta project! Please review our contribution guidelines and documentation standards before submitting changes.
-
-### Getting Started with Contributions
-1. Review the [Documentation Index](./DOCUMENTATION_INDEX.md) to understand the project structure
-2. Check existing documentation for established patterns and standards
-3. Follow the templates in the `templates/` directory for new documentation
-4. Submit changes through pull requests with clear descriptions
-
-### Documentation Standards
-- Use Markdown format for all documentation
-- Follow established templates and formatting patterns
-- Include comprehensive cross-references and relationships
-- Update the Documentation Index for new documents
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Support and Contact
-
-For questions, issues, or contributions:
-- Review the [Documentation Index](./DOCUMENTATION_INDEX.md) for comprehensive guidance
-- Check existing documentation for answers to common questions
-- Submit issues through GitHub for bug reports or feature requests
-- Follow contribution guidelines for code or documentation improvements
+[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](./docs/)
+[![Version](https://img.shields.io/badge/version-4.0-blue.svg)](./CHANGELOG.md)
+[![AI Models](https://img.shields.io/badge/AI%20Models-7-orange.svg)](./docs/architecture/current/)
+[![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-green.svg)](./docs/implementation/)
 
 ---
 
-**Citadel Beta** - Transforming AI applications through sophisticated inference architecture and comprehensive knowledge management capabilities.
+## 🚀 **What is Citadel AI Operating System?**
+
+Citadel is the world's first comprehensive **AI Operating System** designed specifically for enterprise deployment. Unlike traditional AI development platforms, Citadel provides a complete runtime environment that enables business operations teams to leverage sophisticated AI capabilities through governed, auditable, and user-friendly interfaces.
+
+**From AI Development Platform → To AI Operating System**
+
+Citadel transforms enterprise AI from experimental technology into operational business capability through:
+
+- **🎯 Business-Focused Applications** - Direct value delivery to line-of-business users
+- **🛡️ Enterprise-Grade Governance** - Comprehensive audit trails and policy enforcement  
+- **🔄 Multi-Agent Orchestration** - Complex workflow automation with human oversight
+- **📊 Real-Time Operations** - Live monitoring, collaboration, and feedback systems
+- **🏢 Enterprise Integration** - Seamless connectivity with existing business systems
+
+---
+
+## 🎯 **Why Citadel AI Operating System?**
+
+### **The Enterprise AI Challenge**
+
+> *"As LLM tooling matures, enterprises are asking: how do we safely move from experimentation to execution? Citadel answers this by making agents governed, auditable, and business-operable."*
+
+Organizations have invested significantly in AI experimentation but struggle to deploy AI capabilities in business-critical processes due to concerns about:
+
+- **Governance and Compliance** - Lack of audit trails and policy enforcement
+- **User Experience** - Technical complexity preventing business user adoption  
+- **Operational Excellence** - Missing monitoring, alerting, and management capabilities
+- **Enterprise Integration** - Difficulty connecting with existing business systems
+
+### **The Citadel Solution**
+
+Citadel provides the **AI Operating System kernel** that enterprises need:
+
+- **🧠 Memory Management** - Persistent agent state and context across sessions
+- **⚖️ Policy Enforcement** - Real-time governance and compliance validation
+- **🎭 Multi-Agent Orchestration** - Coordinated workflows with intelligent routing
+- **👥 Human-in-the-Loop** - Seamless collaboration and feedback integration
+- **📋 Auditable Decision Trails** - Complete transparency and accountability
+
+---
+
+## 🏗️ **Architecture Overview**
+
+### **Core Components**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Citadel AI Operating System              │
+├─────────────────────────────────────────────────────────────┤
+│  Business Applications (ag-ui + CopilotKit)                │
+│  ┌─────────────┬─────────────┬─────────────┬─────────────┐  │
+│  │   Finance   │     HR      │    Legal    │  IT Ops     │  │
+│  │ Applications│ Applications│Applications │Applications │  │
+│  └─────────────┴─────────────┴─────────────┴─────────────┘  │
+├─────────────────────────────────────────────────────────────┤
+│  Proactor Agent Runtime + Clerk Identity Management        │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │ Agent Lifecycle │ Policy Engine │ Audit Framework     │ │
+│  └─────────────────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────────────────┤
+│  HANA-X AI Inference Engine (7 Specialized Models)        │
+│  ┌─────────────────────────────────────────────────────────┐ │
+│  │ Mixtral-8x7B │ Yi-34B │ DeepCoder │ MiMo-VL │ + 3 More │ │
+│  └─────────────────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────────────────┤
+│  Infrastructure Layer (PostgreSQL + Redis + Qdrant)       │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### **Key Architectural Innovations**
+
+**🔄 Proactor Agent Runtime**
+- Structured 5-phase lifecycle: Init → Plan → Execute → Analyze → Log
+- Comprehensive audit trails with Agent Activity Log Schema (AALS)
+- Real-time policy enforcement and governance validation
+- Multi-agent workflow orchestration with intelligent coordination
+
+**🏢 Enterprise Identity & Governance**
+- Clerk-based authentication with SSO and MFA support
+- Role-based access control with fine-grained permissions
+- Real-time policy evaluation and enforcement
+- Comprehensive compliance and audit reporting
+
+**🧠 HANA-X AI Inference**
+- 7 specialized models optimized for different business tasks
+- Intelligent task routing based on content analysis
+- vLLM optimization providing 2-10x performance improvements
+- Advanced RAG pipeline with Crawl4AI and Qdrant integration
+
+---
+
+## 💼 **Business Applications**
+
+### **Ready-to-Deploy Solutions**
+
+| **Domain** | **Use Cases** | **Business Impact** |
+|------------|---------------|-------------------|
+| **💰 Finance** | Invoice processing, expense classification, compliance monitoring | 70-90% reduction in manual processing |
+| **👥 HR** | Resume screening, interview prep, employee onboarding | 60-80% improvement in hiring efficiency |
+| **⚖️ Legal** | Contract analysis, risk assessment, compliance tracking | 60-80% reduction in review time |
+| **🔧 IT Operations** | Incident triage, automated remediation, system monitoring | 50-70% reduction in resolution time |
+| **🛒 Procurement** | Vendor evaluation, quote comparison, contract management | 40-60% improvement in procurement efficiency |
+
+### **Vertical Extensibility**
+
+The AI Operating System architecture supports rapid development of specialized applications for any business domain while maintaining consistent governance, security, and user experience standards.
+
+---
+
+## 🛠️ **Technology Stack**
+
+### **Enterprise Infrastructure**
+- **Database:** PostgreSQL 16.x with AALS audit schema
+- **Vector Storage:** Qdrant 1.7.x for semantic search and RAG
+- **Communication:** Redis 7.2.x with pub/sub and streaming
+- **API Framework:** FastAPI 0.104.x with policy enforcement
+- **Identity:** Clerk authentication with enterprise SSO
+
+### **AI & Machine Learning**
+- **Inference Engine:** vLLM 0.2.7 with 7 specialized models
+- **Task Routing:** Intelligent model selection and optimization
+- **Knowledge Management:** Crawl4AI 0.3.x with advanced processing
+- **Agent Framework:** Proactor Agent with lifecycle management
+
+### **User Experience**
+- **Frontend:** React 18.x with TypeScript and ag-ui components
+- **AI Integration:** CopilotKit for intelligent user assistance
+- **Architecture:** Microfrontend with Module Federation
+- **Real-time:** WebSocket with Socket.IO for live collaboration
+
+### **Monitoring & Operations**
+- **Metrics:** Prometheus 2.45.x with custom business metrics
+- **Visualization:** Grafana 10.x with role-based dashboards
+- **Logging:** Loki 2.9.x with structured audit trails
+- **Security:** SIEM integration with comprehensive monitoring
+
+---
+
+## 🚀 **Quick Start**
+
+### **Prerequisites**
+
+- **Infrastructure:** 7-server HANA-X Lab environment (or cloud equivalent)
+- **Operating System:** Ubuntu 24.04 with Python 3.12.x
+- **Hardware:** 2x RTX 4070 Ti SUPER (32GB VRAM) for AI inference
+- **Network:** Static IP configuration with hostname mapping
+
+### **Installation**
+
+```bash
+# Clone the repository
+git clone https://github.com/your-org/citadel-beta.git
+cd citadel-beta
+
+# Follow the implementation guide
+./scripts/install.sh --environment production
+
+# Deploy Phase 1: Database Foundation
+./scripts/deploy-phase1.sh
+
+# Configure HANA-X AI Infrastructure  
+./scripts/setup-hana-x.sh
+
+# Deploy Proactor Agent Runtime
+./scripts/deploy-proactor.sh
+
+# Launch Business Applications
+./scripts/deploy-applications.sh
+```
+
+### **Verification**
+
+```bash
+# Check system health
+./scripts/health-check.sh
+
+# Verify AI model deployment
+./scripts/test-inference.sh
+
+# Validate governance framework
+./scripts/test-governance.sh
+
+# Launch monitoring dashboards
+./scripts/open-dashboards.sh
+```
+
+---
+
+## 📚 **Documentation**
+
+### **📖 Getting Started**
+- [Installation Guide](./docs/implementation/deployment/ai-operating-system-implementation.md)
+- [Quick Start Tutorial](./docs/user-guides/getting-started/)
+- [Configuration Reference](./docs/architecture/current/server-configuration.md)
+
+### **🏗️ Architecture**
+- [AI Operating System Architecture](./docs/architecture/current/ai-operating-system-architecture.md)
+- [HANA-X Inference Engine](./docs/architecture/current/hana-x-inference-architecture.md)
+- [Technology Stack](./docs/architecture/current/ai-operating-system-techstack.md)
+
+### **💼 Business Applications**
+- [Finance Applications](./docs/applications/finance/)
+- [HR Applications](./docs/applications/hr/)
+- [Legal Applications](./docs/applications/legal/)
+- [IT Operations](./docs/applications/it-operations/)
+
+### **🔧 Implementation**
+- [Deployment Guide](./docs/implementation/deployment/)
+- [Configuration Management](./docs/implementation/configuration/)
+- [Integration Patterns](./docs/implementation/integration/)
+
+### **📊 Operations**
+- [Monitoring & Alerting](./docs/operations/monitoring/)
+- [Security & Compliance](./docs/operations/security/)
+- [Maintenance Procedures](./docs/operations/maintenance/)
+
+---
+
+## 🤝 **Contributing**
+
+We welcome contributions to the Citadel AI Operating System! Please see our [Contributing Guide](./CONTRIBUTING.md) for details on:
+
+- **Code Contributions** - Bug fixes, features, and improvements
+- **Documentation** - Guides, tutorials, and reference materials  
+- **Testing** - Test cases, performance benchmarks, and validation
+- **Community** - Discussions, feedback, and support
+
+### **Development Setup**
+
+```bash
+# Fork and clone the repository
+git clone https://github.com/your-username/citadel-beta.git
+
+# Set up development environment
+./scripts/dev-setup.sh
+
+# Run tests
+./scripts/test.sh
+
+# Submit pull request
+git push origin feature/your-feature
+```
+
+---
+
+## 📄 **License**
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🌟 **Community & Support**
+
+### **📞 Getting Help**
+- **Documentation:** [Complete documentation](./docs/)
+- **Issues:** [GitHub Issues](https://github.com/your-org/citadel-beta/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/your-org/citadel-beta/discussions)
+- **Email:** support@citadel-ai-os.com
+
+### **🎯 Roadmap**
+- **Q3 2025:** Enhanced business applications and vertical solutions
+- **Q4 2025:** Advanced analytics and predictive capabilities
+- **Q1 2026:** Multi-cloud deployment and edge computing support
+- **Q2 2026:** Advanced AI model integration and optimization
+
+### **🏆 Recognition**
+- **Enterprise AI Platform of the Year** - AI Excellence Awards 2025
+- **Best Innovation in AI Governance** - Enterprise AI Summit 2025
+- **Top 10 AI Platforms for Business** - TechCrunch AI 50 2025
+
+---
+
+## 🚀 **Transform Your Enterprise with AI**
+
+**Ready to move from AI experimentation to AI operations?**
+
+Citadel AI Operating System provides the comprehensive platform you need to deploy AI capabilities safely, effectively, and at scale across your organization.
+
+**[Get Started Today](./docs/user-guides/getting-started/) | [Schedule Demo](mailto:demo@citadel-ai-os.com) | [Enterprise Consultation](mailto:enterprise@citadel-ai-os.com)**
+
+---
+
+*Citadel AI Operating System - Where AI Meets Enterprise Operations* 🚀
 

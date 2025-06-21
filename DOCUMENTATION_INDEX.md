@@ -1,267 +1,273 @@
-# Citadel Beta Documentation Index and Relationships Guide
+# Citadel AI Operating System - Documentation Index
 
-**Author:** Manus AI  
-**Date:** June 19, 2025  
-**Document Type:** Master Documentation Index and Navigation Guide  
-**Project:** Citadel Beta Release - Documentation Organization and Relationships
-
----
-
-## Overview
-
-This master documentation index serves as the definitive guide to the Citadel Beta project documentation ecosystem. It provides comprehensive coverage of all documents, their purposes, relationships, and usage guidance to help stakeholders navigate the extensive documentation and understand the connections between different aspects of the project.
-
-The Citadel Beta project has evolved through multiple phases, from initial concept through Proof of Concept analysis to the current enhanced architecture that integrates sophisticated AI inference capabilities with comprehensive data acquisition and knowledge management systems. This evolution has produced a rich documentation ecosystem that requires careful organization and clear navigation aids to remain accessible and useful.
-
-This index organizes documentation by functional areas while clearly identifying relationships, dependencies, and usage patterns that help stakeholders find relevant information efficiently. The guide serves both as a navigation aid for finding specific information and as an educational resource for understanding the overall project structure and evolution.
+**Version:** 4.0 - AI Operating System  
+**Last Updated:** June 19, 2025  
+**Total Documents:** 520+  
+**Documentation Type:** Master Navigation Guide
 
 ---
 
-## Current Documentation (v3.0)
+## 📚 **Master Documentation Navigation**
 
-### Architecture Documentation
-
-The architecture documentation forms the foundation of the Citadel Beta project, defining the overall system design, technical approach, and integration strategies that guide all implementation and operational activities. These documents represent the current state of the project architecture and serve as the authoritative reference for system design decisions.
-
-**Enhanced Architecture Blueprint** (`docs/architecture/current/enhanced-architecture-blueprint.md`)  
-This comprehensive document defines the complete Citadel Beta architecture, integrating the sophisticated HANA-X Inference Architecture with essential data acquisition and knowledge management capabilities identified through Proof of Concept analysis. The blueprint addresses the complete lifecycle of knowledge-based AI applications from data acquisition through intelligent response generation.
-
-The document serves as the primary architectural reference, providing detailed specifications for all system components, their interactions, and integration patterns. It includes comprehensive coverage of the seven-model AI inference engine, intelligent task routing system, advanced data acquisition infrastructure, and sophisticated document processing pipelines.
-
-Key relationships include dependencies on the PoC Analysis Report for missing component identification, the HANA-X Architecture Review for AI inference specifications, and the Technology Stack Mapping for implementation details. The blueprint serves as the foundation for all implementation planning and operational procedures.
-
-**HANA-X Inference Architecture** (`docs/architecture/current/hana-x-inference-architecture.md`)  
-This document provides detailed specifications for the sophisticated AI inference engine that forms the core of the Citadel Beta platform. The architecture includes seven specialized models with intelligent task routing, advanced performance optimization, and comprehensive operational management capabilities.
-
-The document defines the complete AI inference infrastructure including model deployment strategies, task routing algorithms, performance optimization techniques, and operational monitoring procedures. It serves as the definitive reference for understanding and implementing the AI capabilities that distinguish the Citadel platform.
-
-The architecture integrates seamlessly with the enhanced architecture blueprint while providing detailed specifications for AI-specific components and operations. It includes comprehensive coverage of model specialization, routing intelligence, and performance optimization that enables sophisticated AI applications.
-
-**Server Configuration Guide** (`docs/architecture/current/server-configuration.md`)  
-This comprehensive guide provides detailed configuration procedures for all seven servers in the HANA-X Lab environment, including the enhanced capabilities required for data acquisition, document processing, and knowledge management operations.
-
-The guide includes step-by-step procedures for configuring each server with appropriate software, services, and security measures. It covers the Database Server, LLM Server, Vector Database Server, Development Server, Test Server, Orca Server, and DevOps Server with their enhanced capabilities and integration requirements.
-
-The configuration guide serves as the practical implementation reference for the architecture specifications, providing the detailed procedures needed to deploy and configure the complete Citadel platform. It includes comprehensive coverage of service deployment, security configuration, and operational setup procedures.
-
-**Technology Stack Mapping** (`docs/architecture/current/technology-stack-mapping.md`)  
-This detailed mapping document provides comprehensive coverage of all 190+ technologies used in the Citadel Beta platform, organized by functional area and server deployment. The mapping includes both the sophisticated HANA-X technologies and the essential data acquisition and processing technologies identified through PoC analysis.
-
-The document serves as the definitive reference for understanding the complete technology ecosystem, including AI frameworks, data processing libraries, web crawling tools, vector storage systems, and operational management technologies. It provides version specifications, deployment locations, and integration requirements for all technologies.
-
-The technology stack mapping supports both implementation planning and operational management by providing clear guidance on technology dependencies, version requirements, and deployment strategies. It serves as an essential reference for system administrators, developers, and architects working with the platform.
-
-### Implementation Documentation
-
-The implementation documentation provides practical guidance for deploying, configuring, and operating the Citadel Beta platform. These documents translate the architectural specifications into actionable procedures that enable successful deployment and operation of the complete system.
-
-**Enhanced Implementation Plan** (`docs/implementation/deployment/enhanced-implementation-plan.md`)  
-This comprehensive implementation plan details the integration of critical missing components identified through PoC analysis into the Citadel Beta Release architecture. The plan maintains the sophisticated HANA-X Inference Architecture while adding essential data acquisition, document processing, and RAG pipeline capabilities.
-
-The implementation strategy is structured in four distinct phases that progressively build enhanced capabilities while maintaining system stability and operational continuity. The plan ensures that proven PoC technologies are seamlessly integrated with production-ready HANA-X infrastructure, creating a comprehensive AI platform.
-
-The plan addresses the complete implementation lifecycle from foundation infrastructure through production deployment and optimization. It includes detailed procedures for Crawl4AI integration, document processing pipeline implementation, vector storage enhancement, and RAG pipeline integration with comprehensive testing and validation procedures.
-
-**Deployment Order Strategy** (`docs/implementation/deployment/deployment-order.md`)  
-This strategic document defines the optimal sequence for deploying Citadel Beta components, taking into account dependencies, risk management, and operational continuity requirements. The deployment order ensures that critical infrastructure is established before dependent services while minimizing deployment risks.
-
-The strategy includes seven distinct deployment phases, each with specific objectives, success criteria, and validation procedures. The phased approach enables systematic deployment while providing checkpoints for validation and risk assessment throughout the deployment process.
-
-The deployment order integrates with the enhanced implementation plan to provide comprehensive guidance for project execution. It includes dependency analysis, risk assessment, and contingency planning that support successful deployment while minimizing operational disruption.
-
-**Phase 1 Database Setup** (`docs/implementation/deployment/phase-1-database-setup.md`)  
-This detailed guide provides comprehensive procedures for establishing the database foundation that supports all Citadel Beta operations. The setup includes both traditional database services and the enhanced knowledge management capabilities required for comprehensive AI operations.
-
-The guide includes step-by-step procedures for database installation, configuration, security setup, and integration with other platform components. It covers both the core database services and the enhanced capabilities needed for knowledge base management, crawling metadata, and operational analytics.
-
-The database setup serves as the foundation for all subsequent deployment phases, providing the persistent storage and data management capabilities that support the complete platform. The guide includes comprehensive validation procedures and troubleshooting guidance to ensure successful deployment.
-
-### Analysis and Research Documentation
-
-The analysis and research documentation provides the analytical foundation for architectural and implementation decisions. These documents capture the research, evaluation, and assessment activities that inform the project direction and technical choices.
-
-**PoC Analysis Report** (`docs/analysis/poc-analysis/poc-analysis-report.md`)  
-This comprehensive analysis examines the Proof of Concept crawl4AI-agent-v2 implementation to identify critical missing components and valuable lessons that must be integrated into the Citadel Beta Release architecture. The analysis reveals significant gaps in data acquisition and knowledge management capabilities.
-
-The report provides detailed assessment of PoC technologies, identification of missing components, and comprehensive integration recommendations. It serves as the analytical foundation for the enhanced architecture and implementation planning, providing the rationale for major architectural enhancements.
-
-The analysis demonstrates that while the HANA-X Inference Architecture provides exceptional AI model deployment capabilities, it lacks fundamental data acquisition and knowledge management infrastructure. The report provides the strategic guidance needed to address these gaps while maintaining the sophisticated AI capabilities.
-
-**MiMo-VL-7B-RL Analysis** (`docs/analysis/technology-assessment/mimo-vllm-analysis.md`)  
-This technical analysis provides comprehensive assessment of using MiMo-VL-7B-RL via vLLM for the Citadel project, examining technical implications, benefits, trade-offs, and impact on infrastructure design and implementation strategy.
-
-The analysis provides detailed evaluation of the model's capabilities, performance characteristics, and integration requirements. It includes comprehensive comparison with alternative approaches and recommendations for optimal deployment and utilization within the Citadel architecture.
-
-The assessment supports informed decision-making about AI model selection and deployment strategies while providing the technical foundation for integration planning and operational procedures.
-
-**DeepCoder-14B Integration Analysis** (`docs/analysis/technology-assessment/deepcoder-integration.md`)  
-This analysis provides comprehensive assessment of integrating DeepCoder-14B as the seventh specialized model in the HANA-X architecture, addressing code understanding, generation, and debugging capabilities that are essential for development-focused AI applications.
-
-The analysis includes detailed evaluation of the model's capabilities, integration requirements, and operational considerations. It provides the technical foundation for incorporating sophisticated code intelligence capabilities into the Citadel platform while maintaining the advanced AI inference architecture.
-
-The integration analysis supports the complete AI model ecosystem by ensuring that code-related capabilities are properly addressed and integrated with the broader AI inference infrastructure.
-
-### Operational Documentation
-
-The operational documentation provides guidance for managing, monitoring, and maintaining the Citadel Beta platform in production environments. These documents address the ongoing operational requirements that ensure reliable and efficient platform operation.
-
-**Monitoring and Observability Setup** (`docs/operations/monitoring/monitoring-setup.md`)  
-This comprehensive guide provides procedures for establishing monitoring and observability infrastructure that provides visibility into all aspects of Citadel Beta operations. The monitoring includes both traditional infrastructure metrics and specialized AI operation analytics.
-
-The setup includes configuration of Prometheus and Grafana infrastructure with specialized dashboards for AI inference operations, data acquisition activities, and knowledge management processes. The monitoring provides comprehensive coverage of system performance, operational health, and user experience metrics.
-
-The monitoring infrastructure integrates with the enhanced platform capabilities to provide specialized insights into crawling operations, document processing performance, vector storage utilization, and RAG pipeline effectiveness. The setup enables proactive operational management and performance optimization.
-
-**Security Procedures and Configuration** (`docs/operations/security/security-procedures.md`)  
-This document provides comprehensive security procedures for protecting the Citadel Beta platform, including access controls, data protection measures, and audit procedures that ensure appropriate security posture for AI operations and knowledge management.
-
-The procedures address both traditional infrastructure security and specialized requirements for AI operations, including model protection, knowledge base security, and data acquisition controls. The security framework provides comprehensive protection while enabling efficient operational workflows.
-
-The security configuration integrates with the enhanced platform capabilities to provide appropriate protections for crawling operations, knowledge base management, and AI inference activities while maintaining operational efficiency and user accessibility.
+This comprehensive index provides navigation for all Citadel AI Operating System documentation, organized by stakeholder type and functional area. The documentation covers the complete transformation from AI development platform to enterprise-grade AI runtime environment.
 
 ---
 
-## Archived Documentation
+## 🎯 **Quick Navigation by Role**
 
-### Version 1.0 - Original Citadel Documentation
+### **👔 Executive Stakeholders**
+- [AI Operating System Strategic Positioning](./docs/analysis/strategic-analysis/ai-operating-system-positioning.md) - Market opportunity and competitive advantage
+- [Business Value & ROI Framework](./docs/analysis/strategic-analysis/ai-operating-system-positioning.md#business-value-and-roi-framework) - Quantifiable benefits and return on investment
+- [Executive Summary](./docs/architecture/current/ai-operating-system-architecture.md#executive-summary) - High-level platform overview
+- [Roadmap & Vision](./CHANGELOG.md#roadmap) - Strategic direction and future capabilities
 
-The Version 1.0 documentation represents the initial conceptualization and planning for the Citadel project, before the integration of HANA-X architecture and PoC insights. These documents provide historical context and demonstrate the evolution of project thinking and requirements.
+### **💼 Business Operations Teams**
+- [Business Applications Overview](./docs/applications/) - Domain-specific AI solutions
+- [Finance Applications](./docs/applications/finance/) - Invoice processing, expense management, compliance
+- [HR Applications](./docs/applications/hr/) - Resume screening, interview prep, onboarding
+- [Legal Applications](./docs/applications/legal/) - Contract analysis, risk assessment, compliance
+- [IT Operations](./docs/applications/it-operations/) - Incident management, automation, monitoring
 
-**Original Requirements Summary** (`archive/v1.0/original-citadel-docs/citadel-requirements-summary.md`)  
-This document captures the initial requirements and vision for the Citadel project, providing the foundational understanding that guided early development efforts. The requirements focus on basic AI agent capabilities without the sophisticated inference architecture and comprehensive data acquisition capabilities of the current design.
+### **🏗️ Technical Architects**
+- [AI Operating System Architecture](./docs/architecture/current/ai-operating-system-architecture.md) - Complete system design
+- [HANA-X Inference Architecture](./docs/architecture/current/hana-x-inference-architecture.md) - AI model deployment and routing
+- [Technology Stack](./docs/architecture/current/ai-operating-system-techstack.md) - Comprehensive technology specifications
+- [Server Configuration](./docs/architecture/current/server-configuration.md) - Infrastructure setup and deployment
 
-The original requirements serve as an important reference for understanding project evolution and the rationale for major architectural enhancements. They demonstrate the progression from basic AI agent concepts to the sophisticated platform architecture of the current design.
+### **👨‍💻 Implementation Teams**
+- [Implementation Guide](./docs/implementation/deployment/ai-operating-system-implementation.md) - Complete deployment strategy
+- [Phase 1 Database Setup](./docs/implementation/deployment/phase-1-database-setup.md) - Foundation infrastructure
+- [Deployment Order](./docs/implementation/deployment/deployment-order.md) - Systematic deployment strategy
+- [Configuration Management](./docs/implementation/configuration/) - System configuration procedures
 
-**DeepCoder PRD and Task Lists** (`archive/v1.0/original-citadel-docs/deepcoder-*.md`)  
-These documents provide the initial product requirements and implementation planning for the DeepCoder AI agent, representing the early conceptualization of AI-powered development assistance capabilities. The documents focus on basic agent functionality without the sophisticated model specialization and task routing of the current architecture.
-
-The original DeepCoder documentation provides important context for understanding the evolution toward the current seven-model architecture with specialized DeepCoder-14B integration. The documents demonstrate the progression from basic agent concepts to sophisticated AI inference capabilities.
-
-**Initial Server Mapping** (`archive/v1.0/original-citadel-docs/server-mapping.md`)  
-This document provides the initial server allocation and technology mapping for the Citadel project, representing the early infrastructure planning before the integration of HANA-X architecture and enhanced capabilities. The mapping focuses on basic infrastructure without the sophisticated service architecture of the current design.
-
-The original server mapping provides important context for understanding infrastructure evolution and the rationale for the current seven-server architecture with specialized service deployment. It demonstrates the progression from basic infrastructure concepts to the sophisticated platform architecture.
-
-### Version 2.0 - HANA-X Integration
-
-The Version 2.0 documentation represents the integration of HANA-X Inference Architecture into the Citadel project, establishing the sophisticated AI inference capabilities that form the foundation of the current platform. These documents capture the major architectural enhancement that transformed the project from basic AI agent concepts to sophisticated AI platform capabilities.
-
-**HANA-X Architecture Review** (`archive/v2.0/hana-x-integration/hana-x-architecture-review.md`)  
-This comprehensive review analyzes the HANA-X Inference Architecture and provides recommendations for integration into the Citadel project. The review identifies the sophisticated AI inference capabilities and operational excellence characteristics that make HANA-X superior to previous approaches.
-
-The architecture review provides the analytical foundation for the major architectural enhancement that established the current AI inference capabilities. It demonstrates the technical assessment and decision-making process that led to the adoption of the sophisticated seven-model architecture with intelligent task routing.
-
-**Updated Architecture Blueprint** (`archive/v2.0/hana-x-integration/updated-architecture-blueprint.md`)  
-This document represents the first integration of HANA-X capabilities into the Citadel architecture, establishing the foundation for the sophisticated AI inference capabilities of the current platform. The blueprint focuses on AI model deployment and task routing without the comprehensive data acquisition capabilities of the current design.
-
-The updated blueprint provides important context for understanding the evolution toward the current enhanced architecture that integrates both sophisticated AI inference and comprehensive data acquisition capabilities. It demonstrates the progression from AI-focused architecture to comprehensive AI platform design.
-
-**Enhanced Planning Documentation** (`archive/v2.0/enhanced-planning/`)  
-This collection of documents represents the enhanced planning and implementation guidance developed during the HANA-X integration phase. The documents provide comprehensive deployment procedures and task lists for the AI-focused architecture without the data acquisition enhancements of the current design.
-
-The enhanced planning documentation provides important context for understanding the evolution of implementation strategies and the progression toward the current comprehensive implementation approach that addresses both AI inference and data acquisition requirements.
+### **🔧 Operations Teams**
+- [Monitoring & Alerting](./docs/operations/monitoring/) - System observability and management
+- [Security & Compliance](./docs/operations/security/) - Governance and audit framework
+- [Maintenance Procedures](./docs/operations/maintenance/) - Ongoing operational procedures
+- [Troubleshooting Guide](./docs/operations/troubleshooting/) - Issue resolution procedures
 
 ---
 
-## Document Relationships and Dependencies
+## 📁 **Documentation Structure**
 
-### Hierarchical Relationships
+### **🏗️ Architecture Documentation**
 
-The Citadel Beta documentation follows a clear hierarchical structure that reflects the logical dependencies between different types of information and the natural progression from high-level concepts to detailed implementation guidance. Understanding these relationships is essential for effective navigation and comprehension of the complete project.
+#### **Current Architecture (v4.0)**
+- **[AI Operating System Architecture](./docs/architecture/current/ai-operating-system-architecture.md)** - Complete system architecture with Proactor Agent and Clerk integration
+- **[HANA-X Inference Architecture](./docs/architecture/current/hana-x-inference-architecture.md)** - 7 specialized models with intelligent task routing
+- **[Technology Stack](./docs/architecture/current/ai-operating-system-techstack.md)** - Comprehensive technology specifications and integration
+- **[Server Configuration](./docs/architecture/current/server-configuration.md)** - 7-server HANA-X Lab deployment procedures
+- **[Enhanced Architecture Blueprint](./docs/architecture/current/enhanced-architecture-blueprint.md)** - Integrated architecture with PoC insights
 
-Architecture documents form the top level of the hierarchy, providing the foundational specifications that define the overall system design and technical approach. These documents establish the framework within which all other documentation operates and provide the authoritative reference for system design decisions.
+#### **Infrastructure Diagrams**
+- **[Network Topology](./docs/architecture/diagrams/network-topology.md)** - Physical and logical network design
+- **[Data Flow Diagrams](./docs/architecture/diagrams/data-flow.md)** - Information flow and processing patterns
+- **[Component Relationships](./docs/architecture/diagrams/component-relationships.md)** - System integration and dependencies
 
-The Enhanced Architecture Blueprint serves as the primary architectural document, integrating insights from analysis documents and providing comprehensive system specifications. This document depends on the PoC Analysis Report for missing component identification and the HANA-X Architecture Review for AI inference specifications.
+### **💼 Business Applications**
 
-Implementation documents form the second level of the hierarchy, translating architectural specifications into practical deployment and configuration guidance. These documents depend on architecture specifications while providing the detailed procedures needed for successful system deployment and operation.
+#### **Finance Applications**
+- **[Invoice Processing](./docs/applications/finance/invoice-processing.md)** - Automated invoice handling and approval workflows
+- **[Expense Classification](./docs/applications/finance/expense-classification.md)** - Intelligent expense categorization and reporting
+- **[Compliance Monitoring](./docs/applications/finance/compliance-monitoring.md)** - Financial regulation and policy compliance
+- **[Financial Analytics](./docs/applications/finance/analytics.md)** - Business intelligence and reporting
 
-The Enhanced Implementation Plan serves as the primary implementation document, providing comprehensive deployment procedures that address both the sophisticated AI inference capabilities and the essential data acquisition and processing requirements identified through analysis activities.
+#### **Human Resources Applications**
+- **[Resume Screening](./docs/applications/hr/resume-screening.md)** - Automated candidate evaluation and ranking
+- **[Interview Preparation](./docs/applications/hr/interview-prep.md)** - Intelligent question generation and candidate research
+- **[Employee Onboarding](./docs/applications/hr/onboarding.md)** - Automated workflow management and documentation
+- **[Performance Management](./docs/applications/hr/performance.md)** - Evaluation and development tracking
 
-Analysis documents provide the research and evaluation foundation that supports architectural and implementation decisions. These documents inform higher-level specifications while providing the analytical context needed for understanding technical choices and strategic directions.
+#### **Legal Applications**
+- **[Contract Analysis](./docs/applications/legal/contract-analysis.md)** - Automated contract review and risk assessment
+- **[Compliance Tracking](./docs/applications/legal/compliance-tracking.md)** - Regulatory compliance monitoring and reporting
+- **[Legal Research](./docs/applications/legal/research.md)** - Intelligent legal document search and analysis
+- **[Risk Assessment](./docs/applications/legal/risk-assessment.md)** - Legal risk evaluation and mitigation
 
-Operational documents address ongoing management and maintenance requirements that depend on both architectural specifications and implementation procedures. These documents provide practical guidance for managing deployed systems while referencing multiple foundational documents.
+#### **IT Operations Applications**
+- **[Incident Management](./docs/applications/it-operations/incident-management.md)** - Automated triage and resolution workflows
+- **[System Monitoring](./docs/applications/it-operations/monitoring.md)** - Intelligent system health and performance tracking
+- **[Automated Remediation](./docs/applications/it-operations/remediation.md)** - Self-healing system capabilities
+- **[Capacity Planning](./docs/applications/it-operations/capacity-planning.md)** - Predictive resource management
 
-### Cross-Functional Dependencies
+### **🔧 Implementation Documentation**
 
-The documentation ecosystem includes complex cross-functional dependencies that span multiple document types and functional areas. These dependencies reflect the integrated nature of the Citadel platform and the need for coordination between different aspects of system design and operation.
+#### **Deployment Guides**
+- **[AI Operating System Implementation](./docs/implementation/deployment/ai-operating-system-implementation.md)** - Complete deployment strategy and procedures
+- **[Enhanced Implementation Plan](./docs/implementation/deployment/enhanced-implementation-plan.md)** - Comprehensive deployment with PoC integration
+- **[Phase 1 Database Setup](./docs/implementation/deployment/phase-1-database-setup.md)** - Foundation infrastructure deployment
+- **[Deployment Order](./docs/implementation/deployment/deployment-order.md)** - Systematic deployment strategy with dependencies
 
-Architecture and implementation dependencies ensure that deployment procedures accurately reflect system design specifications while providing practical guidance for achieving architectural objectives. The Enhanced Implementation Plan depends on the Enhanced Architecture Blueprint for system specifications while providing detailed procedures for realizing the architectural vision.
+#### **Configuration Management**
+- **[System Configuration](./docs/implementation/configuration/system-config.md)** - Core system setup and configuration
+- **[Security Configuration](./docs/implementation/configuration/security-config.md)** - Security and compliance setup
+- **[Integration Configuration](./docs/implementation/configuration/integration-config.md)** - Enterprise system integration
+- **[Performance Tuning](./docs/implementation/configuration/performance-tuning.md)** - Optimization and scaling procedures
 
-Analysis and architecture dependencies ensure that system design decisions are informed by comprehensive research and evaluation activities. The Enhanced Architecture Blueprint incorporates insights from the PoC Analysis Report and technology assessments while providing specifications that address identified requirements and opportunities.
+#### **Integration Patterns**
+- **[Enterprise Integration](./docs/implementation/integration/enterprise-integration.md)** - ERP, CRM, and business system connectivity
+- **[API Integration](./docs/implementation/integration/api-integration.md)** - RESTful and GraphQL API patterns
+- **[Data Integration](./docs/implementation/integration/data-integration.md)** - Data synchronization and management
+- **[Security Integration](./docs/implementation/integration/security-integration.md)** - Identity and access management integration
 
-Implementation and operations dependencies ensure that operational procedures are compatible with deployment approaches while providing guidance for managing systems deployed according to implementation specifications. Operational documentation references implementation procedures while providing ongoing management guidance.
+### **📊 Operations Documentation**
 
-Security and functionality dependencies ensure that security measures are integrated with functional capabilities while providing appropriate protection for all system operations. Security documentation addresses both architectural security requirements and operational security procedures.
+#### **Monitoring & Observability**
+- **[System Monitoring](./docs/operations/monitoring/system-monitoring.md)** - Infrastructure and application monitoring
+- **[Business Metrics](./docs/operations/monitoring/business-metrics.md)** - KPI tracking and business intelligence
+- **[Alerting Framework](./docs/operations/monitoring/alerting.md)** - Proactive issue detection and notification
+- **[Dashboard Configuration](./docs/operations/monitoring/dashboards.md)** - Grafana dashboard setup and management
 
-### Evolution and Version Dependencies
+#### **Security & Compliance**
+- **[Security Framework](./docs/operations/security/security-framework.md)** - Comprehensive security architecture
+- **[Compliance Management](./docs/operations/security/compliance.md)** - Regulatory compliance and audit procedures
+- **[Access Control](./docs/operations/security/access-control.md)** - Identity and authorization management
+- **[Audit Procedures](./docs/operations/security/audit-procedures.md)** - Audit trail management and reporting
 
-The documentation ecosystem reflects the evolution of the Citadel project through multiple versions, with clear dependencies between different versions and the progression of project understanding and capabilities. Understanding these evolutionary relationships is essential for comprehending current design decisions and anticipating future development directions.
+#### **Maintenance & Support**
+- **[Maintenance Procedures](./docs/operations/maintenance/procedures.md)** - Routine maintenance and optimization
+- **[Backup & Recovery](./docs/operations/maintenance/backup-recovery.md)** - Data protection and disaster recovery
+- **[Performance Optimization](./docs/operations/maintenance/performance.md)** - System tuning and optimization
+- **[Troubleshooting Guide](./docs/operations/troubleshooting/guide.md)** - Issue diagnosis and resolution
 
-Version 1.0 to Version 2.0 evolution represents the integration of sophisticated AI inference capabilities through HANA-X architecture adoption. This evolution established the foundation for advanced AI operations while identifying the need for comprehensive data acquisition and processing capabilities.
+### **📈 Analysis & Research**
 
-Version 2.0 to Version 3.0 evolution represents the integration of essential data acquisition and knowledge management capabilities identified through PoC analysis. This evolution created the comprehensive AI platform that addresses the complete lifecycle of knowledge-based AI applications.
+#### **Strategic Analysis**
+- **[AI Operating System Positioning](./docs/analysis/strategic-analysis/ai-operating-system-positioning.md)** - Market positioning and competitive analysis
+- **[Business Value Analysis](./docs/analysis/strategic-analysis/business-value.md)** - ROI and business impact assessment
+- **[Market Opportunity](./docs/analysis/strategic-analysis/market-opportunity.md)** - Market size and growth potential
+- **[Competitive Landscape](./docs/analysis/strategic-analysis/competitive-landscape.md)** - Competitive analysis and differentiation
 
-Current documentation builds upon insights and specifications from previous versions while addressing identified gaps and enhancement opportunities. The Enhanced Architecture Blueprint integrates the sophisticated AI inference capabilities of Version 2.0 with the essential data acquisition capabilities identified through PoC analysis.
+#### **Technology Assessment**
+- **[AI Operating System Analysis](./docs/analysis/technology-assessment/ai-operating-system-analysis.md)** - Technical architecture assessment
+- **[MiMo vLLM Analysis](./docs/analysis/technology-assessment/mimo-vllm-analysis.md)** - Model performance and integration analysis
+- **[DeepCoder Integration](./docs/analysis/technology-assessment/deepcoder-integration.md)** - Code intelligence capabilities assessment
+- **[Performance Benchmarks](./docs/analysis/technology-assessment/benchmarks.md)** - System performance analysis
 
-Future evolution will likely focus on optimization, scaling, and capability enhancement based on operational experience and changing requirements. The current documentation provides the foundation for future enhancements while maintaining the architectural integrity and operational excellence established through previous evolution cycles.
+#### **Proof of Concept Analysis**
+- **[PoC Analysis Report](./docs/analysis/poc-analysis/poc-analysis-report.md)** - Comprehensive PoC evaluation and lessons learned
+- **[Technology Comparison](./docs/analysis/poc-analysis/technology-comparison.md)** - PoC vs production technology analysis
+- **[Migration Strategy](./docs/analysis/poc-analysis/migration-strategy.md)** - PoC to production migration planning
+- **[Lessons Learned](./docs/analysis/poc-analysis/lessons-learned.md)** - Key insights and recommendations
+
+### **📖 User Guides**
+
+#### **Getting Started**
+- **[Quick Start Guide](./docs/user-guides/getting-started/quick-start.md)** - Rapid deployment and initial setup
+- **[Installation Guide](./docs/user-guides/getting-started/installation.md)** - Detailed installation procedures
+- **[Configuration Guide](./docs/user-guides/getting-started/configuration.md)** - Initial system configuration
+- **[First Steps](./docs/user-guides/getting-started/first-steps.md)** - Initial user onboarding
+
+#### **Tutorials**
+- **[Business Application Development](./docs/user-guides/tutorials/app-development.md)** - Creating custom business applications
+- **[Agent Configuration](./docs/user-guides/tutorials/agent-config.md)** - Configuring and customizing agents
+- **[Workflow Design](./docs/user-guides/tutorials/workflow-design.md)** - Creating multi-agent workflows
+- **[Integration Patterns](./docs/user-guides/tutorials/integration.md)** - Integrating with enterprise systems
+
+#### **Reference Materials**
+- **[API Reference](./docs/user-guides/reference/api-reference.md)** - Complete API documentation
+- **[Configuration Reference](./docs/user-guides/reference/config-reference.md)** - Configuration parameter reference
+- **[CLI Reference](./docs/user-guides/reference/cli-reference.md)** - Command-line interface documentation
+- **[Troubleshooting Reference](./docs/user-guides/reference/troubleshooting.md)** - Common issues and solutions
 
 ---
 
-## Usage Guidance and Navigation
+## 📚 **Archive Documentation**
 
-### Stakeholder-Specific Navigation
+### **Version 3.0 - Enhanced Architecture**
+- **[Enhanced Architecture Integration](./archive/v3.0/enhanced-architecture/)** - HANA-X integration and PoC insights
+- **[DeepCoder Integration](./archive/v3.0/deepcoder-integration/)** - Code intelligence capabilities
+- **[DocOps Framework](./archive/v3.0/docops-framework/)** - Documentation automation and governance
 
-Different stakeholders require different approaches to navigating the Citadel Beta documentation ecosystem based on their roles, responsibilities, and information needs. This guidance provides tailored navigation strategies that help different user types find relevant information efficiently while understanding the broader project context.
+### **Version 2.0 - HANA-X Integration**
+- **[HANA-X Integration](./archive/v2.0/hana-x-integration/)** - Initial HANA-X architecture integration
+- **[Updated Architecture](./archive/v2.0/updated-architecture/)** - Enhanced architecture blueprints
+- **[Website v1](./archive/v2.0/website-v1/)** - Original documentation website
 
-**Technical Architects and System Designers** should begin with the Enhanced Architecture Blueprint to understand the complete system design and technical approach. This document provides comprehensive coverage of all system components and their interactions, serving as the authoritative reference for architectural decisions.
+### **Version 1.0 - Original Citadel**
+- **[Original Citadel Docs](./archive/v1.0/original-citadel-docs/)** - Initial project documentation
+- **[DeepCoder PRD](./archive/v1.0/original-citadel-docs/deepcoder-prd.md)** - Original product requirements
+- **[Server Mapping](./archive/v1.0/original-citadel-docs/server-mapping.md)** - Initial server configuration
 
-From the architecture blueprint, architects should review the HANA-X Inference Architecture for detailed AI inference specifications and the Technology Stack Mapping for comprehensive technology coverage. The PoC Analysis Report provides important context for understanding architectural enhancement decisions and integration strategies.
+---
 
-**Implementation Engineers and Deployment Specialists** should begin with the Enhanced Implementation Plan to understand the complete deployment strategy and procedures. This document provides comprehensive guidance for deploying and configuring the complete Citadel platform while maintaining system stability and operational continuity.
+## 🔍 **Documentation Usage Strategies**
 
-From the implementation plan, engineers should review the Server Configuration Guide for detailed setup procedures and the Deployment Order Strategy for optimal deployment sequencing. The Phase 1 Database Setup provides specific guidance for establishing the foundational database infrastructure.
+### **By Information Need**
 
-**Operations Teams and System Administrators** should begin with the operational documentation to understand ongoing management and maintenance requirements. The Monitoring and Observability Setup provides guidance for establishing comprehensive system monitoring while the Security Procedures ensure appropriate protection measures.
+#### **"I need to understand the business value"**
+1. Start with [Strategic Positioning](./docs/analysis/strategic-analysis/ai-operating-system-positioning.md)
+2. Review [Business Applications](./docs/applications/)
+3. Examine [ROI Framework](./docs/analysis/strategic-analysis/ai-operating-system-positioning.md#return-on-investment-framework)
 
-Operations teams should also review the Enhanced Architecture Blueprint to understand system design and the Server Configuration Guide to understand deployment configurations. The Technology Stack Mapping provides essential reference information for managing the complete technology ecosystem.
+#### **"I need to implement the system"**
+1. Begin with [Implementation Guide](./docs/implementation/deployment/ai-operating-system-implementation.md)
+2. Follow [Deployment Order](./docs/implementation/deployment/deployment-order.md)
+3. Configure using [Server Configuration](./docs/architecture/current/server-configuration.md)
 
-**Project Managers and Business Stakeholders** should begin with this Documentation Index to understand the overall project structure and documentation organization. The Enhanced Architecture Blueprint provides high-level system overview while the Enhanced Implementation Plan provides project execution guidance.
+#### **"I need to operate the system"**
+1. Review [Operations Documentation](./docs/operations/)
+2. Set up [Monitoring](./docs/operations/monitoring/)
+3. Implement [Security Procedures](./docs/operations/security/)
 
-Business stakeholders should focus on executive summaries and overview sections within technical documents while using this index to understand document relationships and project evolution. The archived documentation provides important context for understanding project progression and decision-making history.
+#### **"I need to develop applications"**
+1. Study [Architecture Documentation](./docs/architecture/current/)
+2. Follow [Development Tutorials](./docs/user-guides/tutorials/)
+3. Reference [API Documentation](./docs/user-guides/reference/api-reference.md)
 
-### Information Discovery Strategies
+### **By Stakeholder Journey**
 
-The Citadel Beta documentation supports multiple information discovery strategies that accommodate different search patterns and information needs. Understanding these strategies helps users find relevant information efficiently while discovering related content that enhances understanding and provides additional context.
+#### **Executive Decision Making**
+1. **Strategic Overview** → [AI Operating System Positioning](./docs/analysis/strategic-analysis/ai-operating-system-positioning.md)
+2. **Business Impact** → [Business Value Analysis](./docs/analysis/strategic-analysis/business-value.md)
+3. **Implementation Planning** → [Implementation Guide](./docs/implementation/deployment/ai-operating-system-implementation.md)
 
-**Sequential Reading Strategy** involves following logical document sequences that build understanding progressively from foundational concepts to detailed implementation guidance. This strategy is particularly effective for users who are new to the project or who need comprehensive understanding of specific functional areas.
+#### **Technical Evaluation**
+1. **Architecture Review** → [AI Operating System Architecture](./docs/architecture/current/ai-operating-system-architecture.md)
+2. **Technology Assessment** → [Technology Stack](./docs/architecture/current/ai-operating-system-techstack.md)
+3. **Implementation Planning** → [Deployment Procedures](./docs/implementation/deployment/)
 
-The recommended sequence for comprehensive understanding begins with this Documentation Index for project overview, proceeds to the Enhanced Architecture Blueprint for system design understanding, continues with the Enhanced Implementation Plan for deployment guidance, and concludes with operational documentation for ongoing management procedures.
+#### **Operational Deployment**
+1. **Infrastructure Setup** → [Server Configuration](./docs/architecture/current/server-configuration.md)
+2. **System Deployment** → [Implementation Guide](./docs/implementation/deployment/ai-operating-system-implementation.md)
+3. **Operations Management** → [Operations Documentation](./docs/operations/)
 
-**Reference Lookup Strategy** involves using the documentation as a reference resource for finding specific information or answers to particular questions. This strategy is most effective for experienced users who need specific information to support their work activities.
+---
 
-The Technology Stack Mapping serves as a comprehensive reference for technology information while the Server Configuration Guide provides detailed configuration procedures. The operational documentation provides reference information for ongoing management activities while the analysis documents provide background information for understanding technical decisions.
+## 📝 **Documentation Standards**
 
-**Exploratory Discovery Strategy** involves browsing through related documents to understand project scope, discover relevant information, and build comprehensive understanding of project capabilities and requirements. This strategy is particularly effective for users who are exploring the project or investigating specific topics.
+### **Quality Assurance**
+- **DocOps CLI Validation** - Automated metadata validation and indexing
+- **Comprehensive Review** - Technical and editorial review procedures
+- **Version Control** - Git-based change management and approval workflows
+- **Accessibility** - WCAG 2.1 compliance and inclusive design
 
-The Documentation Index provides starting points for exploration while cross-references within documents guide users to related information. The archived documentation provides historical context while the analysis documents provide detailed exploration of specific topics and technologies.
+### **Contribution Guidelines**
+- **Documentation Standards** - Style guide and formatting requirements
+- **Review Process** - Peer review and approval procedures
+- **Update Procedures** - Change management and version control
+- **Quality Metrics** - Documentation quality assessment and improvement
 
-**Problem-Solving Strategy** involves using the documentation to find solutions to specific problems or challenges encountered during implementation or operation. This strategy requires understanding document relationships and the ability to synthesize information from multiple sources.
+---
 
-The Enhanced Implementation Plan provides comprehensive troubleshooting guidance while the operational documentation addresses ongoing management challenges. The analysis documents provide background information for understanding complex issues while the architecture documentation provides context for system behavior and requirements.
+## 🎯 **Next Steps**
 
-### Contribution and Maintenance Guidelines
+### **For New Users**
+1. **Start Here:** [Quick Start Guide](./docs/user-guides/getting-started/quick-start.md)
+2. **Understand Value:** [Strategic Positioning](./docs/analysis/strategic-analysis/ai-operating-system-positioning.md)
+3. **Plan Implementation:** [Implementation Guide](./docs/implementation/deployment/ai-operating-system-implementation.md)
 
-The Citadel Beta documentation ecosystem requires ongoing contribution and maintenance to remain current, accurate, and useful for its intended purposes. These guidelines provide direction for contributing to the documentation while maintaining quality, consistency, and organizational effectiveness.
+### **For Existing Users**
+1. **Review Changes:** [Changelog](./CHANGELOG.md)
+2. **Migration Planning:** [Migration Guides](./CHANGELOG.md#migration-guides)
+3. **New Features:** [AI Operating System Architecture](./docs/architecture/current/ai-operating-system-architecture.md)
 
-**Content Contribution Guidelines** ensure that new documentation and updates maintain consistency with existing standards while providing valuable information that enhances the overall documentation ecosystem. Contributors should review existing documentation to understand established patterns and standards before creating new content.
+### **For Contributors**
+1. **Contribution Guide:** [Contributing](./CONTRIBUTING.md)
+2. **Development Setup:** [Development Environment](./docs/user-guides/tutorials/development-setup.md)
+3. **Documentation Standards:** [Documentation Guidelines](./docs/contributing/documentation-standards.md)
 
-New documentation should follow established templates and formatting standards while providing comprehensive coverage of relevant topics. Contributors should ensure that new documents are properly integrated with existing documentation through appropriate cross-references and index updates.
+---
 
-**Review and Approval Procedures** ensure that documentation changes are properly evaluated for accuracy, consistency, and value before integration into the main documentation ecosystem. All changes should be submitted through pull requests that include clear descriptions of the changes and their rationale.
-
-Review procedures should evaluate technical accuracy, consistency with existing documentation, and adherence to established standards. Approved changes should be properly integrated with updates to cross-references, index entries, and related documentation as needed.
-
-**Maintenance and Update Responsibilities** ensure that documentation remains current and accurate as the project evolves and requirements change. Regular review cycles should identify opportunities for improvement while update procedures ensure that changes are properly coordinated and integrated.
-
-Maintenance activities should include regular review of document accuracy, validation of cross-references and links, and assessment of continued relevance and usefulness. Update procedures should ensure that changes are properly coordinated across related documents while maintaining consistency and quality standards.
+*This documentation index is maintained automatically through the DocOps CLI framework and updated with each release. For questions or suggestions, please see our [Contributing Guide](./CONTRIBUTING.md).*
 
