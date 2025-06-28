@@ -51,7 +51,7 @@ class SystemConfig:
                 3000: "grafana", 
                 9100: "node_exporter"
             },
-            log_file="/var/log/system_validation.log",
+            log_file="system_validation.log",
             timeout_seconds=30,
             model_test_prompts=[
                 "Hello, my name is",
