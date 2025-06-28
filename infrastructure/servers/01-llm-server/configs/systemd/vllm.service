@@ -1,0 +1,35 @@
+[Unit]
+Description=vLLM API Server - Citadel Model with OpenAI-Compatible Endpoint
+After=network.target
+
+[Service]
+Type=simple
+User=vllm
+WorkingDirectory=/home/vllm
+
+# Load environment variables
+EnvironmentFile=/opt/citadel/config/vllm/vllm.env
+
+# Virtual environment context
+Environment=PATH=/opt/citadel/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Environment=VIRTUAL_ENV=/opt/citadel/venv
+Environment=CUDA_VISIBLE_DEVICES=0,1
+
+# Updated ExecStart without --serve-mode (not available in this version)
+ExecStart=/opt/citadel/venv/bin/python -m vllm.entrypoints.api_server \
+--model "meta-llama/Llama-2-7b-chat-hf" \
+--tensor-parallel-size 2 \
+--gpu-memory-utilization 0.90 \
+--max-num-seqs 256 \
+--host 0.0.0.0
+
+CPUAffinity=0-15
+Restart=always
+RestartSec=10
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=vllm
+
+[Install]
+WantedBy=multi-user.target
