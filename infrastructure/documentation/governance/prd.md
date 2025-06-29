@@ -1,308 +1,143 @@
-# Product Requirements Document: Citadel AI Operating System - LLM Server Implementation
+Product Requirements Document: LLM Server Infrastructure Delivery (Phase 2A)
+1. Introduction/Overview
+This document outlines the requirements for establishing the foundational infrastructure of the LLM Server (hostname llm, IP 192.168.10.29), designated for the Citadel AI Operating System Phase 2. The primary goal is to deliver a robust and optimized server environment capable of hosting large language models and supporting subsequent AI infrastructure deployments. This phase ensures the underlying hardware and essential software components are correctly provisioned, configured, and validated, with a focus on a development environment's security posture.
 
-**Document Type:** Product Requirements Document  
-**Feature Name:** LLM Server Implementation  
-**Version:** 1.0 (Corrected)  
-**Date:** June 28, 2025  
-**Owner:** Citadel Development Team
+2. Goals
+Provision Core Infrastructure: Successfully deploy and configure the physical and virtual foundational components for the LLM server.
 
----
+Optimize Hardware Performance: Maximize the performance of CPU, GPU, memory, and storage to support intensive AI workloads.
 
-## 1. Overview
+Establish Basic Security: Implement fundamental security measures to protect the server in a development environment.
 
-### Problem Statement
-The Citadel AI Operating System requires a sophisticated, enterprise-grade LLM server implementation to serve as the foundational AI infrastructure for the complete ecosystem. This server must support advanced multi-model operations, real-time inference, comprehensive RAG capabilities, and seamless integration across the 7-server architecture while maintaining enterprise-grade reliability and performance.
+Deploy Monitoring Foundation: Set up essential monitoring capabilities to ensure operational visibility and proactive issue detection.
 
-### Solution Summary
-Implement a comprehensive LLM server architecture based on vLLM inference engine, featuring automated model management, intelligent request routing, dual GPU load balancing, advanced RAG pipeline integration, and sophisticated knowledge base operations. The server will serve as the AI foundation for Kilo Code (AI Coding Assistant), Agent Zero (AI Engineer), and development team members while providing enterprise-grade performance, reliability, and advanced AI capabilities.
+Prepare for AI Workloads: Create a stable and optimized environment ready for the deployment of core AI infrastructure and LLM services.
 
-### Success Metrics
-- **Performance:** Industry-standard throughput (>100 requests/second, >1000 tokens/second)
-- **Reliability:** 99.9% uptime with automated failover capabilities
-- **Scalability:** Support for 10+ concurrent models with dynamic loading/unloading
-- **RAG Integration:** Sub-second query response for millions of documents with advanced metadata filtering
-- **Knowledge Base:** Comprehensive data acquisition and processing for large-scale knowledge operations
+3. User Stories
+As an Infrastructure Team member, I need to ensure all server hardware is verified and correctly configured, so that the base system is stable and reliable.
 
----
+As a Development Team member, I need a Python environment with necessary libraries and CUDA support, so that I can deploy and run large language models efficiently.
 
-## 2. Target Users
+As a Security Team member, I need basic security controls implemented on the server, so that unauthorized access is minimized in a development environment.
 
-### Primary Users
-- **Kilo Code**: AI Coding Assistant requiring high-performance code generation, analysis, and comprehensive code knowledge base access
-- **Agent Zero**: AI Engineer needing comprehensive reasoning, problem-solving capabilities, and access to technical documentation
-- **Development Team Members**: Developers requiring AI assistance with access to project documentation, code repositories, and technical knowledge bases
+As an Operations Team member, I need comprehensive monitoring dashboards and alerts, so that I can track server health, performance, and quickly respond to issues.
 
-### Secondary Users
-- **Operations Team**: Monitoring, maintenance, performance optimization, and knowledge base management
-- **Security Team**: Audit, compliance, security management, and content filtering
-- **Infrastructure Team**: System administration, resource management, and multi-server coordination
+4. Functional Requirements
+The LLM Server infrastructure must include:
 
-### User Personas
-- **AI Assistant**: Requires sub-second response times, multi-turn conversations, code understanding, and real-time knowledge access
-- **Development Team**: Needs reliable API access, consistent performance, comprehensive documentation access, and error handling
-- **Operations Team**: Requires comprehensive monitoring, alerting, knowledge base analytics, and troubleshooting capabilities
+System Preparation:
 
----
+Verified server hardware specifications (GPUs, RAM, storage).
 
-## 3. Core Functionality
+Clean installation and configuration of Ubuntu Server 24.04.2 LTS.
 
-### 3.1 vLLM Integration and Advanced Model Management
-- **Primary Inference Engine**: vLLM with CUDA 12.9 and tensor parallelism
-- **Multi-Model Support**: Simultaneous loading of 7+ specialized models with dynamic management
-- **Model Loading/Unloading**: Automated model lifecycle management based on usage patterns and resource optimization
-- **Memory Optimization**: Intelligent memory allocation across dual RTX 4070 Ti SUPER GPUs (32GB total VRAM)
-- **Specialized Model Support**: DeepCoder-14B, MiMo-VL-7B-RL, and other domain-specific models
+Static IP, hostname, and updated system packages.
 
-### 3.2 Advanced RAG Pipeline Integration
-- **Comprehensive Knowledge Base Operations**: Full integration with Crawl4AI for sophisticated web crawling and document processing
-- **Intelligent Document Processing**: Hierarchical chunking, metadata generation, quality assessment, and structure preservation
-- **Vector Database Integration**: Advanced operations with Qdrant including metadata filtering, similarity search, and result ranking
-- **Multimodal RAG**: Integration with visual content processing through MiMo-VL-7B-RL
-- **Conversation Management**: Sophisticated multi-turn interactions with context preservation and query refinement
+Installation of essential build tools and libraries.
 
-### 3.3 Request Routing and Load Balancing
-- **Intelligent Routing**: Request distribution based on model capabilities, query type, and system load
-- **GPU Load Balancing**: Optimal distribution across dual RTX 4070 Ti SUPER with memory-adaptive dispatching
-- **Queue Management**: Sophisticated request queuing with priority handling, timeout management, and resource allocation
-- **Failover Mechanisms**: Automatic failover between GPU instances, model replicas, and server components
+Configured Python 3.12.x environment with a dedicated virtual environment and core packages.
 
-### 3.4 API and Integration Layer
-- **RESTful API**: FastAPI-based endpoints for inference, model management, RAG operations, and health checks
-- **WebSocket Support**: Real-time streaming for long-form generation, chat interfaces, and RAG responses
-- **7-Server Integration**: Complete connectivity across all infrastructure components
-- **Task Routing**: HANA-X compatible task routing with specialized RAG capabilities
+Mounted and optimized NVMe storage (/opt/citadel/models) and HDD storage (/opt/citadel/logs, /opt/citadel/backups).
 
-### 3.5 Configuration Management
-- **Environment-Based Config**: `.env` files for environment-specific settings across all components
-- **JSON Configuration**: Model definitions, routing rules, RAG parameters, and performance optimization
-- **YAML Orchestration**: Service definitions, deployment configurations, crawling strategies, and scaling rules
-- **Dynamic Reconfiguration**: Hot-reload capabilities for configuration changes without service interruption
+Implemented storage monitoring and automated backup procedures.
 
----
+Optimized filesystem performance.
 
-## 4. Technical Requirements
+Configured network interfaces, internal routing, and DNS resolution.
 
-### 4.1 Performance Requirements
-- **Throughput**: Minimum 100 requests/second sustained load for standard inference
-- **Token Generation**: >1000 tokens/second aggregate across all models
-- **RAG Response Time**: <2 seconds for complex knowledge base queries
-- **Latency**: <100ms time-to-first-token for cached models
-- **Concurrent Users**: Support 50+ simultaneous API connections with RAG capabilities
-- **Model Loading**: <60 seconds for large models (7B+ parameters)
-- **Knowledge Base Query**: Sub-second response for millions of documents
+Implemented basic network security (iptables for essential services) and monitoring.
 
-### 4.2 Scalability Requirements
-- **Horizontal Scaling**: Architecture ready for multi-node deployment
-- **Vertical Scaling**: Efficient utilization of available GPU memory and compute resources
-- **Dynamic Scaling**: Automatic model loading based on demand patterns and query types
-- **Resource Management**: Intelligent allocation of GPU memory, compute resources, and storage
-- **Knowledge Base Scaling**: Support for millions of documents with efficient indexing and retrieval
+Created necessary service accounts (citadel, vllm, router) with appropriate permissions.
 
-### 4.3 Reliability Requirements
-- **Availability**: 99.9% uptime target (8.77 hours downtime/year)
-- **Error Handling**: Graceful degradation and comprehensive error responses
-- **Health Monitoring**: Continuous health checks with automatic recovery
-- **Data Persistence**: Configuration, conversation history, and knowledge base state persistence
-- **Backup Integration**: Automated nightly backups with point-in-time recovery
+Configured key-based SSH access, sudo, file permissions, and audit logging.
 
-### 4.4 Integration Requirements
-- **Vector Database Connectivity**: Advanced integration with Qdrant server (192.168.10.30) for sophisticated vector operations
-- **Database Integration**: Comprehensive PostgreSQL integration (192.168.10.35) for knowledge base management and operational analytics
-- **Development Server Integration**: Full connectivity with Crawl4AI hub and multimodal processing (192.168.10.33)
-- **Monitoring Stack**: Complete integration with Prometheus/Grafana monitoring (192.168.10.32)
-- **CI/CD Integration**: Automated deployment and testing integration (192.168.10.31)
-- **Backup Server**: Automated backup operations and disaster recovery (192.168.10.34)
+Hardware Optimization:
 
----
+Installed and configured NVIDIA GPU drivers (CUDA Toolkit 12.9 compatible).
 
-## 5. Scope and Constraints
+Enabled GPU persistence mode and optimized power/memory management.
 
-### 5.1 In Scope
-- **Complete LLM Server Implementation**: Full vLLM deployment with advanced model management
-- **Advanced RAG Pipeline**: Comprehensive knowledge base operations with Crawl4AI integration
-- **Multi-Model Support**: 7+ concurrent specialized models with intelligent routing
-- **7-Server Integration**: Full connectivity and coordination across complete infrastructure
-- **Monitoring Integration**: Comprehensive metrics, alerting, and analytics
-- **Configuration Management**: Environment-based configuration with hot-reload capabilities
-- **API Development**: RESTful and WebSocket API endpoints with RAG capabilities
-- **Knowledge Base Management**: Sophisticated content acquisition, processing, and retrieval
+Implemented GPU monitoring.
 
-### 5.2 Out of Scope (Future Phases)
-- **Authentication/Authorization**: Internal network access only (no external auth required in Phase 2)
-- **Advanced Model Fine-tuning**: Training capabilities deferred to later phases
-- **Multi-Node Clustering**: Single-server implementation with clustering readiness
-- **External API Integration**: Focus on internal infrastructure integration only
-- **Custom Model Development**: Focus on existing pre-trained models
+Installed CUDA Toolkit 12.9 and cuDNN library, with verified functionality.
 
-### 5.3 Technical Constraints
-- **Hardware**: Fixed dual RTX 4070 Ti SUPER configuration (32GB total VRAM)
-- **Operating System**: Ubuntu 24.04.2 LTS mandatory across all servers
-- **Python Version**: Python 3.12.x required for compatibility
-- **CUDA Version**: CUDA 12.9 with cuDNN 8.9
-- **Network**: Internal network (192.168.10.0/24) with 7-server architecture
+Optimized CUDA environment variables and memory management for multi-model serving.
 
----
+Model Deployment Specifications:
+- DeepCoder-14B is deployed with FP8 quantization, utilizing approximately 13.5 GB of VRAM.
+- MiMo-VL-7B-RL is deployed in Q4_K quantized format, utilizing about 3.5 GB of VRAM.
+These quantization strategies enable efficient memory usage and support multi-model serving on available GPU resources.
 
-## 6. Dependencies
+Installed thermal monitoring tools, configured fan control, and implemented thermal alerting/logging.
 
-### 6.1 Infrastructure Dependencies - Complete 7-Server Architecture
-- **LLM Server (192.168.10.29)**: Primary AI inference with advanced RAG integration
-- **Vector Database Server (192.168.10.30)**: Qdrant for sophisticated vector operations and metadata management
-- **CI/CD Server (192.168.10.31)**: Automated deployment, testing, and backup coordination
-- **Monitoring Server (192.168.10.32)**: Prometheus/Grafana stack for comprehensive system monitoring
-- **Development Server (192.168.10.33)**: Crawl4AI hub, document processing, and multimodal capabilities
-- **Backup Server (192.168.10.34)**: Dedicated backup and disaster recovery infrastructure
-- **Database Server (192.168.10.35)**: PostgreSQL for knowledge base management, crawling metadata, and operational analytics
+Optimized CPU governor, memory settings, I/O scheduler, CPU affinity, and network stack.
 
-### 6.2 External Dependencies
-- **Model Repositories**: Hugging Face Hub access for model downloads
-- **CUDA Drivers**: NVIDIA driver stack 550.x+ with CUDA 12.9
-- **Python Packages**: PyTorch 2.x, vLLM, FastAPI, Crawl4AI, Qdrant-client, and related dependencies
-- **Browser Automation**: Playwright with Chromium for sophisticated web crawling
-- **Document Processing**: Specialized libraries for content extraction and processing
+Passed comprehensive hardware tests for CPU, GPU, memory, and storage.
 
-### 6.3 Team Dependencies
-- **Infrastructure Team**: 7-server hardware setup and network configuration
-- **Security Team**: Security framework implementation across all components
-- **Operations Team**: Monitoring setup and multi-server operational procedures
-- **Development Team**: API development, RAG integration, and comprehensive testing
+Documented hardware configuration.
 
----
+Security Framework (Minimal for Dev Environment):
 
-## 7. Success Criteria
+Installed and configured UFW firewall with specific port rules for LLM services and secure SSH access.
 
-### 7.1 Functional Success Criteria
-- **Model Loading**: Successfully load and serve 7+ different specialized models simultaneously
-- **API Functionality**: All REST and WebSocket endpoints operational with RAG capabilities
-- **7-Server Integration**: Successful integration across complete infrastructure
-- **Configuration**: All configurations externalized with hot-reload capabilities
-- **Health Monitoring**: Comprehensive health checks and status reporting across all components
-- **RAG Operations**: Full knowledge base acquisition, processing, and retrieval capabilities
+Disabled root SSH login and enforced key-based authentication for team members.
 
-### 7.2 Performance Success Criteria
-- **Throughput**: Achieve >100 requests/second sustained load
-- **Token Generation**: >1000 tokens/second aggregate performance
-- **RAG Response Time**: <2 seconds for complex knowledge base queries
-- **GPU Utilization**: >80% average GPU utilization under load
-- **Memory Efficiency**: <90% GPU memory utilization at peak load
-- **Knowledge Base Query**: Sub-second response for millions of documents
+Configured basic sudo access and initial audit logging for critical actions.
 
-### 7.3 Operational Success Criteria
-- **Monitoring**: 100% metric coverage across all 7 servers with comprehensive alerting
-- **Backup**: Automated nightly backups with verified restore capability
-- **Documentation**: Complete operational runbooks and troubleshooting guides
-- **Team Training**: All team members trained on system operation and maintenance
-- **Security**: Full security framework implemented and validated across infrastructure
-- **Knowledge Base Management**: Comprehensive content lifecycle management and analytics
+Set up file permissions to ensure service operation and prevent accidental unauthorized access.
 
----
+Monitoring Foundation:
 
-## 8. Timeline
+Installed Prometheus node_exporter and nvidia_exporter.
 
-### 8.1 Phase 2: Complete Implementation (247 Tasks)
-Based on the comprehensive task breakdown in the Phase 2 Implementation document:
+Configured comprehensive system, GPU, and process metrics collection.
 
-- **Tasks 1-50**: Infrastructure foundation and security framework (Weeks 1-3)
-  - 7-server network configuration and security implementation
-  - Base system setup and monitoring infrastructure
-  
-- **Tasks 51-100**: Core AI infrastructure and vLLM deployment (Weeks 4-6)
-  - vLLM installation and multi-model deployment
-  - Basic API endpoints and health monitoring
-  
-- **Tasks 101-150**: Advanced RAG pipeline and vector integration (Weeks 7-9)
-  - Qdrant deployment and vector database optimization
-  - Crawl4AI integration and document processing pipeline
-  
-- **Tasks 151-200**: Sophisticated document processing and knowledge management (Weeks 10-12)
-  - Advanced metadata management and query optimization
-  - Multimodal integration and specialized model deployment
-  
-- **Tasks 201-247**: System optimization, monitoring, and production readiness (Weeks 13-15)
-  - Performance optimization and load testing
-  - Comprehensive monitoring and operational procedures
+Configured Prometheus for scraping, metric retention, aggregation, and federation.
 
-### 8.2 Implementation Strategy
-- **Iterative Approach**: Working increments delivered every 2 weeks
-- **Parallel Workstreams**: Infrastructure, AI models, RAG pipeline, and integration components
-- **Comprehensive Testing**: Each phase includes full integration testing across all 7 servers
-- **Documentation**: Complete operational runbooks and technical documentation
-- **Performance Validation**: Continuous performance monitoring and optimization
+Implemented Prometheus data backup and recovery.
 
-### 8.3 Milestone Deliverables
-- **Week 3**: Basic 7-server infrastructure with monitoring
-- **Week 6**: Operational LLM server with multi-model support
-- **Week 9**: Advanced RAG pipeline with knowledge base operations
-- **Week 12**: Complete multimodal integration and sophisticated processing
-- **Week 15**: Production-ready system with full operational capabilities
+Created Grafana dashboards for system overview, GPU monitoring, LLM performance, business metrics, and alert management.
 
----
+Configured critical system, performance, capacity, and security alerts.
 
-## 9. Risks and Mitigation
+Implemented alert routing to appropriate teams.
 
-### 9.1 Technical Risks
-- **Risk**: GPU memory limitations with multiple large models and RAG operations
-  - **Mitigation**: Implement sophisticated memory management, dynamic model loading/unloading, and memory-adaptive dispatching
-- **Risk**: vLLM compatibility issues with specialized models
-  - **Mitigation**: Maintain comprehensive model compatibility matrix and fallback inference engines
-- **Risk**: Network latency and connectivity issues across 7-server architecture
-  - **Mitigation**: Implement robust error handling, connection pooling, and network monitoring
-- **Risk**: Knowledge base performance degradation with large-scale operations
-  - **Mitigation**: Optimize vector database configuration, implement intelligent caching, and monitor query performance
+5. Non-Goals (Out of Scope)
+Deployment of specific LLM applications or models onto the server.
 
-### 9.2 Operational Risks
-- **Risk**: Team knowledge gaps with advanced RAG operations and multi-server management
-  - **Mitigation**: Comprehensive training program, detailed documentation, and phased knowledge transfer
-- **Risk**: Hardware failure or thermal issues with intensive GPU operations
-  - **Mitigation**: Comprehensive monitoring, alerting, preventive maintenance, and failover procedures
-- **Risk**: Configuration management complexity across 7 servers
-  - **Mitigation**: Standardized configuration templates, validation scripts, and automated deployment procedures
-- **Risk**: Knowledge base content quality and accuracy issues
-  - **Mitigation**: Implement quality assessment algorithms, content validation, and manual review processes
+Integration with external user-facing applications (e.g., Kilo Code AI Assistant).
 
-### 9.3 Business Risks
-- **Risk**: Performance not meeting advanced AI assistant expectations
-  - **Mitigation**: Continuous performance monitoring, optimization, and user feedback integration
-- **Risk**: Integration delays affecting dependent AI applications
-  - **Mitigation**: Phased delivery with working increments and parallel development streams
-- **Risk**: Security vulnerabilities in comprehensive AI infrastructure
-  - **Mitigation**: Comprehensive security framework, regular audits, and security monitoring across all components
-- **Risk**: Operational complexity overwhelming team capabilities
-  - **Mitigation**: Automated operational procedures, comprehensive monitoring, and gradual capability expansion
+Development of the Database Server, Vector Database Server, or Development Server.
 
----
+Training or fine-tuning of large language models.
 
-## 10. Appendices
+Phase 2B (Core AI Infrastructure) and subsequent phases.
 
-### 10.1 Architecture Reference
-- Complete 7-server architecture blueprint with network topology
-- Hardware specifications and resource allocation
-- Integration patterns and data flow diagrams
+Advanced Security Measures: This includes comprehensive intrusion detection, disk encryption, advanced vulnerability scanning, and formal incident response procedures beyond basic logging and alerting for a development environment.
 
-### 10.2 Technology Stack
-- Comprehensive technology inventory with version requirements
-- Dependency matrix and compatibility requirements
-- Performance benchmarks and optimization guidelines
+6. Design Considerations (Optional)
+Adherence to enterprise-grade stability and performance best practices.
 
-### 10.3 Operational Procedures
-- Deployment procedures and rollback strategies
-- Monitoring and alerting configuration
-- Backup and recovery procedures
-- Troubleshooting guides and escalation procedures
+Scalability considerations for future expansion of LLM workloads.
 
+Maintainability through clear configurations and documentation.
 
-## Output
+7. Technical Considerations (Optional)
+Targeted Hardware: 2x RTX 4070 Ti SUPER (32GB VRAM total), 128GB RAM, 8TB NVMe, 2x 10TB HDD.
 
-*   **Format:** Markdown (`.md`)
-*   **Location:** `/tasks/`
-*   **Filename:** `prd-[feature-name].md`
+Operating System: Ubuntu Server 24.04.2 LTS.
 
-## Final instructions
+Key Technologies: Python 3.12.x, NVIDIA CUDA Toolkit 12.9, cuDNN 8.9, UFW, Prometheus, Grafana.
 
-1. Do NOT start implementing the PRD
-2. Make sure to ask the user clarifying questions
-3. Take the user's answers to the clarifying questions and improve the PRD
+Network Integration: 192.168.10.29 static IP, routing to 192.168.10.30 (Vector Server) and 192.168.10.35 (Database Server).
 
----
+8. Success Metrics
+Technical Validation: All Phase 2A tasks completed and validated as per the "Citadel AI Operating System - Phase 2 Implementation Tasks" document.
 
-**This PRD establishes the foundation for a world-class, enterprise-grade LLM server implementation that serves as the AI backbone of the Citadel ecosystem, supporting advanced AI assistants with comprehensive knowledge base operations while maintaining enterprise-grade performance, security, and reliability across a sophisticated 7-server architecture.**
+Operational Readiness: Ubuntu 24.04.2 LTS installed and optimized, hardware components verified and optimized, basic security framework implemented and tested, and monitoring foundation deployed and operational.
+
+Infrastructure Preparedness: Infrastructure is ready for Phase 2B (Core AI Infrastructure) with established performance baselines.
+
+Documentation & Training: All team members trained on new systems, documentation complete and accessible.
+
+Stakeholder Sign-off: Formal stakeholder sign-off on Phase 2A completion.

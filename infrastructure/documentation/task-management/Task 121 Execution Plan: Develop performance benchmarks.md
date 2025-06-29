@@ -2,7 +2,7 @@
 - **Completion protocol:**  
   1. When you finish a **sub‑task**, immediately mark it as completed by changing `[ ]` to `[x]`.  
   2. If **all** subtasks underneath a parent task are now `[x]`, also mark the **parent task** as completed.  
-  3. A task can be marked complete until it has been tested and passed.
+  3. A task cannot be marked complete until it has been tested and passed.
 
 ## Task List Maintenance
 
