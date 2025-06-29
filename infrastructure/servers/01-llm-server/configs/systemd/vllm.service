@@ -15,15 +15,15 @@ Environment=PATH=/opt/citadel/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:
 Environment=VIRTUAL_ENV=/opt/citadel/venv
 Environment=CUDA_VISIBLE_DEVICES=0,1
 
-# Updated ExecStart without --serve-mode (not available in this version)
-ExecStart=/opt/citadel/venv/bin/python -m vllm.entrypoints.api_server \
+# Bind vLLM to specific CPU cores (0-15) to minimize context switching and improve performance predictability.
+ExecStart=/usr/bin/taskset -c 0-15 /opt/citadel/venv/bin/python -m vllm.entrypoints.api_server \
 --model "meta-llama/Llama-2-7b-chat-hf" \
 --tensor-parallel-size 2 \
 --gpu-memory-utilization 0.90 \
 --max-num-seqs 256 \
+--swap-space 16 \
 --host 0.0.0.0
 
-CPUAffinity=0-15
 Restart=always
 RestartSec=10
 
